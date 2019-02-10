@@ -60,16 +60,30 @@
 <script>
 
   window.addEventListener('keydown', function(e) {
+    // console.log(e.keyCode)
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    // console.log(audio);
     
-    const key = document.querySelector(`.key[data-key="${e.keycode}"]`)
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
 
-    if (!audio) return //stops the function from running all togetherf
+    if (!audio) return //stops the function from running all together
     audio.currentTime = 0 // Rewind and play from start of audio file.
     audio.play()
+    console.log('key is', key)
+    // key.addClass('playing')  //jQuery method  
     key.classList.add('playing')
         
   })
+
+  function removeTransition(e) {
+    console.log(e)
+  }
+
+
+  const keys = document.querySelectorAll('.key')
+  keys.addEventListener('transitioned') 
+
+  keys.forEach(key => key,addEventListener('transitioned', removeTransition))
 
 </script>
 
