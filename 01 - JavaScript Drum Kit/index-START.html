@@ -57,9 +57,9 @@
 
 		<script>
 			// Many approaches available to listen for a key up event. Identify the element, i.e. an input, div or text-area, you want to listen to for changes.
-      
-      // Refractored Approach with arrow functions.
-      let playSound = (e) => {
+
+			// Refactored Approach with arrow functions.
+			let playSound = (e) => {
 				const audio = document.querySelector(`audio[data-key='${e.keyCode}']`)
 				const key = document.querySelector(`.key[data-key='${e.keyCode}']`)
 				if (!audio) return // if there is no audio associated with the key element than stop function.
@@ -79,7 +79,7 @@
 
 			window.addEventListener('keydown', playSound)
 
-      // Initial Approach
+			// Initial Approach
 			// window.addEventListener('keydown', function(e) {
 			// 	// console.log(e.keyCode)
 			// 	const audio = document.querySelector(`audio[data-key='${e.keyCode}']`) // Remember to include '' around the temperate literal number
@@ -90,7 +90,6 @@
 			// 	audio.play() // `play()` is a built-in method that start playing current audio or video. Once key element is selected and the audio or video begins playing, if same key element is selected again ... the media will not play again because it is already playing.
 			// 	key.classList.add('playing')
 			// })
-
 		</script>
 	</body>
 </html>
