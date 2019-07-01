@@ -12,10 +12,10 @@ A catalog of my ongoing Vanilla JavaScript practice with [Wes Bos'](https://gith
 
 1. Browser Keyboard Drum Kit
    * [Repo](https://github.com/CodeMeKathy/JS30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index-START.html)
-   * [Live](https://KathyLambert.me/JS30/01%20-%20JavaScript%20Drum%20Kit/index-START.html)
+   * [Live](https://kathylambert.me/JS30/01%20-%20JavaScript%20Drum%20Kit/index-START.html)
 1. JS & CSS Web Clock
    * [Repo](https://github.com/CodeMeKathy/JS30/blob/master/02%20-%20JS%20and%20CSS%20Clock/index-START.html)
-   * [Live](https://KathyLambert.me/JS30/01%20-%20JavaScript%02%20-%20JS%20and%20CSS%20Clock/index-START.html)
+   * [Live](https://kathylambert.me/JS30/02%20-%20JS%20and%20CSS%20Clock/index-START.html)
 
 ## Coming Soon
 
