@@ -10,8 +10,8 @@ A catalog of my ongoing Vanilla JavaScript practice with [Wes Bos'](https://gith
 
 ## Completed Challenges
 
-1. [Drum Kit Browser](https://github.com/CodeMeKathy/JS30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index-START.html)
-2. [JS & CSS Clock](https://github.com/CodeMeKathy/JS30/blob/master/02%20-%20JS%20and%20CSS%20Clock/index-START.html)
+1. [Browser Keyboard Drum Kit](https://github.com/CodeMeKathy/JS30/blob/master/01%20-%20JavaScript%20Drum%20Kit/index-START.html)
+2. [JS & CSS Web Clock](https://github.com/CodeMeKathy/JS30/blob/master/02%20-%20JS%20and%20CSS%20Clock/index-START.html)
 
 ## Coming Soon
 
