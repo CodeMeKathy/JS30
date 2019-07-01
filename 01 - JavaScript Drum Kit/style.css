@@ -1,6 +1,8 @@
 html {
 	font-size: 10px;
-	background: url(http://i.imgur.com/b9r5sEL.jpg) bottom center;
+	background: url(https://github.com/CodeMeKathy/JS30/blob/master/assets/adult-band-concert-995301.jpg?raw=true)
+		bottom center;
+	/*Photo provided by Josh Sorenson from Pexels for free via www.pexels.com (https://www.pexels.com)" */
 	background-size: cover;
 }
 body,
