@@ -1,74 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>JS + CSS Clock</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>JS & CSS Clock</title>
+	</head>
+	<body>
+		<div class="clock">
+			<div class="clock-face">
+				<div class="hand hour-hand"></div>
+				<div class="hand min-hand"></div>
+				<div class="hand second-hand"></div>
+			</div>
+		</div>
 
+		<style>
+			html {
+				background: #018ded url(http://unsplash.it/1500/1000?image=881&blur=50);
+				background-size: cover;
+				font-family: 'helvetica neue';
+				text-align: center;
+				font-size: 10px;
+			}
 
-    <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
-    </div>
+			body {
+				margin: 0;
+				font-size: 2rem;
+				display: flex;
+				flex: 1;
+				min-height: 100vh;
+				align-items: center;
+			}
 
+			.clock {
+				width: 30rem;
+				height: 30rem;
+				border: 20px solid white;
+				border-radius: 50%;
+				margin: 50px auto;
+				position: relative;
+				padding: 2rem;
+				box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef, inset 0 0 10px black,
+					0 0 10px rgba(0, 0, 0, 0.2);
+			}
 
-  <style>
-    html {
-      background:#018DED url(http://unsplash.it/1500/1000?image=881&blur=50);
-      background-size:cover;
-      font-family:'helvetica neue';
-      text-align: center;
-      font-size: 10px;
-    }
+			.clock-face {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				transform: translateY(-3px); /* accounts for the height of the clock hands */
+			}
 
-    body {
-      margin: 0;
-      font-size: 2rem;
-      display:flex;
-      flex:1;
-      min-height: 100vh;
-      align-items: center;
-    }
+			.hand {
+				width: 50%;
+				height: 6px;
+				background: black;
+				position: absolute;
+				top: 50%;
+				transform-origin: 100%; /* In order to move the pivot point of the hand to rotate at very right hand-side of the div ( the hand) vice the default which is the middle at 50% on the x-axis.*/
+				transform: rotate(
+					90deg
+				); /* Rotation of the div which runs left to right by 90deg. The hand will align to the 12 o'clock position, i.e. up and down. */
+				transition: all 0.05s; /* Rotates all hands at the same interval*/
+				transition-timing-function: cubic-bezier(
+					0.6,
+					-0.28,
+					0.735,
+					0.045
+				); /* Changes the way and how much the hand moves or ticks forward.*/
+			}
+		</style>
 
-    .clock {
-      width: 30rem;
-      height: 30rem;
-      border:20px solid white;
-      border-radius:50%;
-      margin:50px auto;
-      position: relative;
-      padding:2rem;
-      box-shadow:
-        0 0 0 4px rgba(0,0,0,0.1),
-        inset 0 0 0 3px #EFEFEF,
-        inset 0 0 10px black,
-        0 0 10px rgba(0,0,0,0.2);
-    }
+		<script>
+			// Declare and initialize secHand, minHand, hrHand
+			const secHand = document.querySelector('.second-hand')
+			const minHand = document.querySelector('.min-hand')
+			const hrHand = document.querySelector('.hour-hand')
 
-    .clock-face {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform: translateY(-3px); /* account for the height of the clock hands */
-    }
+			//  TODO: Add If/Else statements to force the transform forward vice backwards when 360deg are met.
 
-    .hand {
-      width:50%;
-      height:6px;
-      background:black;
-      position: absolute;
-      top:50%;
-    }
+			// Create a function that runs every sec using setDate
+			setTime = () => {
+				// Create a new instance of the Date method which provides the seconds of the current hour.
+				const now = new Date() // Outputs a whole data object: Mon Jul 01 2019 14:06:48 GMT-0400 (Eastern Daylight Time)
+				const seconds = now.getSeconds()
+				// console.log(seconds)
 
-  </style>
+				// Calculate the seconds per degree based on 360 degrees.
+				const secondsInDeg = (seconds / 60) * 360 + 90 // Aligns seconds to degrees + 90deg to offset original rotation.
+				// Transform the second hand based on degrees per second.
+				secHand.style.transform = `rotate(${secondsInDeg}deg)`
+				// console.log(secondsInDeg)
 
-  <script>
+				// Calculate the minutes per degree based on 360 degrees.
+				const mins = now.getMinutes()
+				const minsInDeg = (mins / 60) * 360 + 90
+				// console.log(minsInDeg)
+				minHand.style.transform = `rotate(${minsInDeg}deg)`
 
+				// Calculate the current hour per degree based on 360 degrees.
+				const hour = now.getHours()
+				const hrsInDeg = (hour / 12) * 360 + 90
+				console.log(hrsInDeg)
+				hrHand.style.transform = `rotate(${hrsInDeg}deg)`
+			}
 
-  </script>
-</body>
+			setInterval(setTime, 1000)
+		</script>
+	</body>
 </html>
