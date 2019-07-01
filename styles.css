@@ -24,3 +24,8 @@ a:hover {
 div.nav-section {
 	height: 3em;
 }
+
+img {
+	width: 250px;
+	height: 200px;
+}
