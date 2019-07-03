@@ -68,10 +68,11 @@
 				key.classList.add('playing')
 			}
 
-			let removeTransition = (e) => {
+			function removeTransition(e) {
 				if (e.propertyName !== 'transform') return // skip if it is not a transform event.
-				console.log(e.propertyName)
-				this.classList.remove('playing')
+				// console.log(e.propertyName)
+				if (this !== null) this.classList.remove('playing')
+				console.log(this)
 			}
 
 			const keys = document.querySelectorAll('.key')
